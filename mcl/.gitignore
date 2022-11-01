@@ -1,0 +1,11 @@
+.idea
+.gradle
+build
+out
+
+/testing
+
+
+/gradle
+gradlew
+gradlew.bat

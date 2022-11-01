@@ -1,0 +1,97 @@
+plugins {
+    id 'me.him188.maven-central-publish' version "1.0.0-dev-3"
+    id 'java'
+}
+
+group 'org.itxtech'
+version '2.1.1'
+description '模块化、轻量级且支持完全自定义的 mirai 加载器。'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation('commons-cli:commons-cli:1.5.0')
+    implementation('com.google.code.gson:gson:2.9.0')
+    implementation('org.fusesource.jansi:jansi:2.4.0')
+}
+
+def getGitHash = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'rev-parse', '--short', 'HEAD'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
+}
+
+task fatJar(type: Jar) {
+    from sourceSets.main.output
+    archiveClassifier.set("all")
+    archiveFileName = "mcl.jar"
+
+    manifest {
+        attributes "Main-Class": "org.itxtech.mcl.Loader"
+        attributes "Version": project.version + "-" + getGitHash()
+        attributes "Launcher-Agent-Class": "org.itxtech.mcl.Agent"
+        attributes "Agent-Class": "org.itxtech.mcl.Agent"
+        attributes "Premain-Class": "org.itxtech.mcl.Agent"
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    exclude("META-INF/LICENSE.txt", "META-INF/NOTICE.txt", "META-INF/NOTICE-tools.txt")
+}
+
+task launchTest(type: JavaExec) {
+    dependsOn(fatJar)
+
+    jvmArgs(
+            '-Dmcl.no-ansi-console-init=true',
+    )
+
+    mainClass.set('-jar')
+    args(fatJar.outputs.files.singleFile)
+
+    def wk = project.file('testing')
+    workingDir(wk)
+    doFirst { wk.mkdirs() }
+}
+
+task zipAll(type: Zip) {
+    dependsOn(fatJar)
+
+    from fileTree(dir: ".", includes: ["README.md", "LICENSE", "mcl", "mcl.cmd"])
+    from("$buildDir/libs") {
+        include "mcl.jar"
+        rename { "mcl.jar" }
+    }
+    destinationDirectory = file("$buildDir/libs")
+    archiveFileName = "mcl-${project.version}.zip"
+}
+
+assemble.dependsOn(fatJar)
+assemble.dependsOn(zipAll)
+
+mavenCentralPublish {
+    singleDevGithubProject("iTXTech", "mirai-console-loader")
+    licenseAGplV3()
+    useCentralS01()
+
+    publication {
+        artifacts.artifact(tasks.getByName("zipAll"))
+        artifacts.artifact(tasks.getByName("fatJar"))
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
