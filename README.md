@@ -1,5 +1,3 @@
-> 由于我的QQ不停地被封禁，因此无法支持此项目继续开发，欢迎大家使用Fork后的项目 😭
-
 <div align="center">
    <img width="160" src="https://github.com/mamoe/mirai/blob/dev/docs/mirai.png" alt="logo"></br>
 
@@ -61,9 +59,9 @@ docker-compose up -d
 
 | 插件                 | 版本   | 源代码 |
 | -------------------- | ------ | ---- |
-| mirai-console-loader | 2.0.0  | <https://github.com/iTXTech/mirai-console-loader> |
-| mirai-http-api       | 2.5.0 | <https://github.com/project-mirai/mirai-api-http> |
-| mirai-core-all       | 2.10.1  | <https://github.com/project-mirai/mirai-repo-mirror> |
+| mirai-console-loader | 2.1.1  | <https://github.com/iTXTech/mirai-console-loader> |
+| mirai-http-api       | 2.5.2 | <https://github.com/project-mirai/mirai-api-http> |
+| mirai-core-all       | 2.13.0  | <https://github.com/project-mirai/mirai-repo-mirror> |
 
 ## 限制
 
