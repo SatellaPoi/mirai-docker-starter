@@ -6,6 +6,8 @@ WORKDIR /app
 
 ADD ./mcl/ .
 
+ADD ./config.json .
+
 # ADD ./plugins/*.jar ./plugins/
 
 RUN chmod +x mcl && \
