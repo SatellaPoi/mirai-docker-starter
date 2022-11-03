@@ -6,7 +6,7 @@ WORKDIR /app
 
 ADD ./mcl/ .
 
-ADD ./plugins/*.jar ./plugins/
+# ADD ./plugins/*.jar ./plugins/
 
 RUN chmod +x mcl && \
     ./mcl --update-package net.mamoe:mirai-core-all --channel stable &&\
