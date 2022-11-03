@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mirai:
-    image: reprover/mirai-http:latest
+    image: llpp9980/mirai-docker-starter:v2.13.0
     volumes:
       - ./config:/app/config
       - ./data:/app/data
