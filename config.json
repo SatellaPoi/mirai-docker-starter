@@ -9,25 +9,25 @@
   "packages": {
     "net.mamoe:mirai-console": {
       "channel": "stable",
-      "version": "2.13.0",
+      "version": "2.14.0",
       "type": "libs",
       "versionLocked": false
     },
     "net.mamoe:mirai-console-terminal": {
       "channel": "stable",
-      "version": "2.13.0",
+      "version": "2.14.0",
       "type": "libs",
       "versionLocked": false
     },
     "net.mamoe:mirai-core-all": {
       "channel": "stable",
-      "version": "2.13.0",
+      "version": "2.14.0",
       "type": "libs",
       "versionLocked": false
     },
     "org.itxtech:mcl-addon": {
       "channel": "c2001",
-      "version": "2.0.2",
+      "version": "2.1.0",
       "type": "plugins",
       "versionLocked": false
     },
