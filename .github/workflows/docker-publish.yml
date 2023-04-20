@@ -11,7 +11,7 @@ on:
 env:
   REGISTRY: docker.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: llpp9980/mirai-docker-starter
+  IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/${{ github.repository_name }}
 
 
 jobs:
