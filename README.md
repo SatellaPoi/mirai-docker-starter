@@ -6,7 +6,6 @@
 ---
 
 [![Gitter](https://badges.gitter.im/mamoe/mirai.svg)](https://gitter.im/mamoe/mirai?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![Actions Status](https://github.com/mamoe/mirai-api-http/workflows/Gradle%20CI/badge.svg)](https://github.com/mamoe/mirai-api-http/actions)
 
 Mirai 是一个在全平台下运行，提供 QQ Android 和 TIM PC 协议支持的高效率机器人框架
 
@@ -45,7 +44,7 @@ docker run -d -p 8080:8080 -v ./config:/app/config [-v ./plugins:/app/plugins] r
 
 容器默认开 8080 端口，与 Mirai-HTTP-API 默认配置一致，有需要可以自己映射
 
-建议使用 [docker-compose](https://github.com/rxrw/mirai-docker-starter/blob/master/docker-compose.yml) 一键启动：
+建议使用 `docker-compose`一键启动：
 
 ```bash
 #第一次生成配置文件
@@ -59,9 +58,9 @@ docker-compose up -d
 
 | 插件                 | 版本   | 源代码 |
 | -------------------- | ------ | ---- |
-| mirai-console-loader | 2.1.1  | <https://github.com/iTXTech/mirai-console-loader> |
+| mirai-console-loader | 2.1.2  | <https://github.com/iTXTech/mirai-console-loader> |
 | mirai-http-api       | 2.5.2 | <https://github.com/project-mirai/mirai-api-http> |
-| mirai-core-all       | 2.13.0  | <https://github.com/project-mirai/mirai-repo-mirror> |
+| mirai-core-all       | 2.14.0  | <https://github.com/project-mirai/mirai-repo-mirror> |
 
 ## 限制
 
@@ -75,7 +74,7 @@ docker 是容器服务，因此端口开放但网络出口是 docker 的 bridge 
 
 ### console
 
-console 启动的时候会检查更新，目前已经把最新版 stable-2.7.0 内置了，有需要可以调整`config.json`。
+console 启动的时候会检查更新，目前已经把最新版 stable-2.14.0 内置了，有需要可以调整`config.json`。
 
 ### cli
 
