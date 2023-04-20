@@ -10,8 +10,6 @@ on:
 
 env:
   REGISTRY: docker.io
-  # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/mirai-docker-starter
 
 
 jobs:
@@ -58,7 +56,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ secrets.DOCKER_USERNAME }}/${{ github.repository_name }}
           tags: latest
 
       # Build and push Docker image with Buildx (don't push on PR)
