@@ -2,55 +2,54 @@
   "module_packages": [
     "mcl:org.itxtech.mcl.module.builtin"
   ],
-  "mirai_repo": "https://repo.itxtech.org",
+  "mirai_repo": "https://repo.mirai.mamoe.net/keep/mcl",
   "maven_repo": [
     "https://maven.aliyun.com/repository/public"
   ],
   "packages": {
     "net.mamoe:mirai-console": {
-      "channel": "stable",
+      "channel": "maven",
       "version": "2.14.0",
       "type": "libs",
-      "versionLocked": true
+      "versionLocked": false
     },
     "net.mamoe:mirai-console-terminal": {
-      "channel": "stable",
+      "channel": "maven",
       "version": "2.14.0",
       "type": "libs",
-      "versionLocked": true
+      "versionLocked": false
     },
     "net.mamoe:mirai-core-all": {
-      "channel": "stable",
+      "channel": "maven",
       "version": "2.14.0",
       "type": "libs",
-      "versionLocked": true
+      "versionLocked": false
     },
     "org.itxtech:mcl-addon": {
       "channel": "c2001",
-      "version": "2.1.0",
+      "version": "2.1.1",
       "type": "plugins",
-      "versionLocked": true
+      "versionLocked": false
     },
     "net.mamoe:mirai-api-http": {
       "channel": "stable-v2",
       "version": "2.5.2",
       "type": "plugins",
-      "versionLocked": true
+      "versionLocked": false
     },
     "xyz.cssxsh.mirai:mirai-device-generator": {
       "channel": "stable",
       "version": "1.1.3",
       "type": "plugins",
-      "versionLocked": true
+      "versionLocked": false
+    },
+    "org.bouncycastle:bcprov-jdk15on": {
+      "channel": "stable",
+      "version": "1.64",
+      "type": "libs",
+      "versionLocked": false
     }
   },
-  "archiveSuffix": [
-    ".zip",
-    ".mirai2.jar",
-    ".mirai.jar",
-    "-all.jar",
-    ".jar"
-  ],
   "disabled_modules": [],
   "proxy": "",
   "log_level": 1,

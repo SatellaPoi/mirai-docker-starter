@@ -9,6 +9,7 @@ services:
       - ./logs:/app/logs
       - ./plugins:/app/plugins
       - ./bots:/app/bots
+      - ./config.json:/app/config.json
     ports: 
       - 8080:8080
       
