@@ -47,6 +47,9 @@ docker run -d -p 8080:8080 -v ./config:/app/config [-v ./plugins:/app/plugins] r
 建议使用 `docker-compose`一键启动：
 
 ```bash
+#克隆项目
+git clone https://ghproxy.com/https://github.com/SatellaPoi/mirai-docker-starter.git <FLODER NAME>
+
 #第一次生成配置文件
 docker-compose up
 
