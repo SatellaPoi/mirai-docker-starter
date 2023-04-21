@@ -1,12 +1,13 @@
 <div align="center">
-   <img width="160" src="https://github.com/mamoe/mirai/blob/dev/docs/mirai.png" alt="logo"></br>
+   <img width="160" src="https://ghproxy.com/https://github.com/mamoe/mirai/blob/dev/docs/mirai.png" alt="logo"></br>
 
-   <img width="95" src="https://github.com/mamoe/mirai/blob/dev/docs/mirai.svg" alt="title">
+   <img width="95" src="https://ghproxy.com/https://github.com/mamoe/mirai/blob/dev/docs/mirai.svg" alt="title">
 
 ---
 
 [![Gitter](https://badges.gitter.im/mamoe/mirai.svg)](https://gitter.im/mamoe/mirai?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Docker](https://github.com/SatellaPoi/mirai-docker-starter/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/SatellaPoi/mirai-docker-starter/actions/workflows/docker-publish.yml)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/llpp9980/mirai-docker-starter/2.14.0)
 
 Mirai 是一个在全平台下运行，提供 QQ Android 和 TIM PC 协议支持的高效率机器人框架
 
