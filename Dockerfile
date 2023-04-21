@@ -10,9 +10,9 @@ ADD ./config.json .
 
 # ADD ./plugins/*.jar ./plugins/
 
-RUN chmod +x mcl && \
-    # ./mcl --update-package net.mamoe:mirai-core-all --channel stable &&\
-    ./mcl --dry-run
+RUN chmod +x mcl
+    # ./mcl --update-package net.mamoe:mirai-core-all --channel stable && \
+    # ./mcl --dry-run
 
 EXPOSE 8080
 
