@@ -33,14 +33,21 @@ Mirai HTTP Docker 一键启动环境
 
 使用 `docker-compose`启动：
 
+* 克隆项目
+
 ```bash
-#克隆项目
 git clone https://ghproxy.com/https://github.com/SatellaPoi/mirai-docker-starter.git <FLODER NAME>
+```
 
-#第一次生成配置文件
+* 第一次生成配置文件
+
+```bash
 docker-compose up -d
+```
 
-#修改配置文件后重新启动
+* 修改配置文件后重新启动
+
+```bash
 docker-compose restart
 ```
 
