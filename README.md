@@ -29,23 +29,9 @@ Mirai HTTP Docker 一键启动环境
 
 ## 玩法
 
-一键启动：
-
-```bash
-# 生成配置文件
-docker run --rm -it -v ./config:/app/config reprover/mirai-http:latest
-
-#(如果需要其它插件，可以映射目录进去)
-docker run --rm -it -v ./config:/app/config -v ./plugins:/app/plugins reprover/mirai-http:latest
-
-
-#按自己需要修改配置然后运行
-docker run -d -p 8080:8080 -v ./config:/app/config [-v ./plugins:/app/plugins] reprover/mirai-http:latest
-```
-
 容器默认开 8080 端口，与 Mirai-HTTP-API 默认配置一致，有需要可以自己映射
 
-建议使用 `docker-compose`一键启动：
+使用 `docker-compose`启动：
 
 ```bash
 #克隆项目
@@ -54,7 +40,7 @@ git clone https://ghproxy.com/https://github.com/SatellaPoi/mirai-docker-starter
 #第一次生成配置文件
 docker-compose up
 
-#修改配置文件
+#修改配置文件后启动
 docker-compose up -d
 ```
 
@@ -78,19 +64,7 @@ docker 是容器服务，因此端口开放但网络出口是 docker 的 bridge 
 
 ### console
 
-console 启动的时候会检查更新，目前已经把最新版 stable-2.14.0 内置了，有需要可以调整`config.json`。
-
-### cli
-
-由于是 docker 脚本，因此直接启动是启动的 `console` 无交互界面，如需进交互，可以
-
-```bash
-docker-compose exec mirai
-```
-
-不知道是什么原因，在非交互界面时使用 `docker run` 运行起来的进程关不掉，可以用 `docker kill` ，也可以在运行的时候使用 `docker run -it` 进入交互式界面。在 `docker-compose` 下是正常的。
-
-> 本镜像版本与 mirai-console-loader + mirai-http-api 版本保持同步
+console 启动的时候会检查更新，有需要可以调整`config.json`。
 
 ### 说明
 
